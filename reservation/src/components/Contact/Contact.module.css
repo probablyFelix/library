@@ -1,0 +1,143 @@
+.contact {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 40px;
+    padding: 40px;
+    max-width: 1200px;
+    margin: 5% auto;
+    background: #ffffff;
+    border-radius: 16px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    margin-top: 150px;
+}
+
+.formContainer {
+    flex: 1;
+    max-width: 600px;
+    padding: 20px;
+}
+
+.title {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: #333;
+    font-weight: bold;
+    text-align: center;
+}
+
+.formGroup {
+    margin-bottom: 20px;
+}
+
+.label {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 1rem;
+    color: #555;
+    font-weight: 500;
+}
+
+.input,
+.textarea {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 1rem;
+    background: #f9f9f9;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.input:focus,
+.textarea:focus {
+    border-color: #921224;
+    box-shadow: 0 0 0 3px rgba(146, 18, 36, 0.3);
+    outline: none;
+}
+
+.textarea {
+    height: 120px;
+    resize: none;
+}
+
+.button {
+    background: linear-gradient(145deg, #921224, #b71f36);
+    color: white;
+    padding: 14px 28px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1.1rem;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+}
+
+.button:hover {
+    background: linear-gradient(145deg, #690f1b, #8c172d);
+    transform: translateY(-4px);
+    box-shadow: 0 8px 14px rgba(0, 0, 0, 0.2);
+}
+
+.button:focus {
+    outline: none;
+    box-shadow: 0 0 0 4px rgba(52, 152, 219, 0.4);
+}
+
+.imageContainer {
+    flex: 1;
+    display: block;
+    justify-content: center;
+    align-items: center;
+}
+
+.image {
+    max-width: 100%;
+    height: 500px;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .contact {
+        flex-direction: column;
+        align-items: center;
+        gap: 30px;
+    }
+
+    .formContainer {
+        max-width: 100%;
+    }
+
+    .title {
+        font-size: 2rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .title {
+        font-size: 1.8rem;
+    }
+
+    .button {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .contact {
+        padding: 20px;
+    }
+
+    .title {
+        font-size: 1.6rem;
+    }
+
+    .button {
+        padding: 12px 20px;
+        font-size: 0.9rem;
+    }
+}

@@ -1,0 +1,362 @@
+/* Blue background for the section */
+.activitiesSection {
+    padding: 60px 20px;
+    color: white;
+}
+
+.header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.title {
+    font-size: 70px;
+    font-weight: 900;
+    color: white;
+}
+
+.sortButton {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    margin-left: auto;
+    font-size: 14px;
+}
+
+.sortButton:hover {
+    background-color: #0056b3;
+}
+
+
+/* Two-column layout for cards */
+.activitiesContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.card {
+    display: flex;
+    align-items: center;
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card.reverse {
+    flex-direction: row-reverse;
+}
+
+/* Text section */
+.textContainer {
+    padding: 20px;
+    flex: 1;
+    color: #333;
+    text-align: center;
+}
+
+.activityTitle {
+    font-size: 36px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    background: linear-gradient(to right, #690f1b, #b32538, #b32538, #720f1c);
+    -webkit-background-clip: text;
+    color: transparent;
+}
+
+.description {
+    font-size: 17px;
+    margin-bottom: 20px;
+    line-height: 1.5;
+}
+
+.date {
+    font-size: 14px;
+    color: #777;
+}
+
+.joinButton {
+    background: linear-gradient(to right, #690f1b, #b32538, #b32538, #720f1c);
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    width: 50%;
+    border-radius: 5px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.joinButton:hover {
+    transform: scale(1.05);
+    background: linear-gradient(to right, #720f1c, #720f1c, #b32538);
+}
+
+/* Image section */
+.imageContainer {
+    flex: 1;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative; /* Added to position the calendar over the image */
+    overflow: hidden;
+}
+
+.image {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.card:hover .image {
+    transform: scale(1.05);
+    position: relative;
+}
+
+/* Calendar styles */
+.calendar {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background-color: rgba(255, 255, 255, 0.7);
+    padding: 8px 12px;
+    border-radius: 8px;
+    text-align: center;
+    font-size: 14px;
+    color: #333;
+}
+
+.calendarDate {
+    font-size: 20px;
+    font-weight: bold;
+    display: block;
+}
+
+.calendarMonth {
+    font-size: 12px;
+    color: #777;
+}
+
+.calendarTime {
+    font-size: 14px;
+    font-weight: 500;
+    color: #555;
+    display: block;
+    margin-top: 5px;
+}
+
+/* Modal overlay and layout */
+.modalOverlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.7); /* Darker background for contrast */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    overflow: auto;
+}
+
+.modal {
+    background-color: #fff;
+    border-radius: 12px; /* Rounded corners for a smoother feel */
+    max-width: 900px;
+    width: 80%;
+    padding: 30px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Subtle shadow for a floating effect */
+    display: flex;
+    flex-direction: row;
+    overflow: hidden;
+    position: relative; /* Ensure it's relative for the close button's absolute positioning */
+}
+
+.closeButton {
+    margin: 1%;
+    position: absolute; /* Use absolute positioning */
+    top: 10px;
+    right: 10px; /* Adjusted to the top-right of the modal */
+    font-size: 30px;
+    font-weight: bold;
+    background: linear-gradient(to right, #690f1b, #831221, #b32538);
+    padding: 6px 16px; /* Add padding to all sides (adjust as needed) */
+    border-radius: 5px;
+    color: white;
+    border: none;
+    cursor: pointer;
+    z-index: 1010; /* Ensures it sits above other modal elements */
+    transition: color 0.3s ease;
+}
+
+.closeButton:hover {
+    background: linear-gradient(to right, #b32538, #831221, #690f1b); /* Slight hover effect */
+}
+
+.modalContent {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    padding: 20px 10px;
+}
+
+.modalFormContainer {
+    flex: 1;
+    padding-right: 20px;
+    display: flex;
+    flex-direction: column;
+    color: #690f1b;
+}
+
+.modalTitle {
+    font-size: 30px;
+    font-weight: 700;
+    color: #690f1b;
+    margin-bottom: 20px;
+    text-align: left;
+    text-transform: capitalize;
+}
+
+.modalBookTitle {
+    font-size: 24px;
+    font-weight: 700;
+    color: #690f1b;
+    margin-bottom: 20px;
+    text-align: left;
+    text-transform: capitalize;
+}
+
+.modalForm {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.formLabel {
+    font-size: 14px;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 8px;
+    text-transform: uppercase;
+}
+
+.inputField {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 1rem;
+    background: #f9f9f9;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.inputField:focus {
+    border-color: #921224;
+    box-shadow: 0 0 0 3px rgba(146, 18, 36, 0.3);
+    outline: none; /* Subtle glow effect on focus */
+}
+
+.submitButton {
+    background: linear-gradient(to right, #690f1b,  #831221, #b32538);
+    color: white;
+    padding: 14px;
+    border-radius: 10px;
+    font-size: 16px;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    text-transform: uppercase;
+}
+
+.submitButton:hover {
+    background: linear-gradient(to right, #b32538, #831221, #690f1b);
+}
+
+.modalImageContainer {
+    flex: 1;
+    padding-left: 20px;
+    position: relative; /* Ensure relative positioning for the close button */
+}
+
+.modalImage {
+    width: 100%;
+    height: auto;
+    border-radius: 12px;
+    object-fit: cover;
+}
+
+.modalDescription {
+    color: #333;
+    font-size: 18px;
+    line-height: 1.6;
+    margin-bottom: 15px;
+}
+
+.modalDetails {
+    font-size: 18px;
+    margin-bottom: 12px;
+    color: #555;
+    display: flex;
+    align-items: center;
+}
+
+.modalDetails .icon {
+    margin-right: 10px;
+    color: #690f1b;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .card {
+        flex-direction: column;
+    }
+
+    .card.reverse {
+        flex-direction: column;
+    }
+
+    .imageContainer {
+        height: 250px;
+    }
+
+    .modal {
+        flex-direction: column;
+    }
+
+    .modalContent {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .modalFormContainer,
+    .modalImageContainer {
+        flex: 1;
+        padding: 0;
+    }
+
+    .modalTitle {
+        font-size: 20px;
+    }
+
+    .inputField {
+        font-size: 14px;
+    }
+
+    .submitButton {
+        font-size: 14px;
+    }
+
+    .modalDescription {
+        font-size: 14px;
+    }
+}

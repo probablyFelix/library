@@ -1,0 +1,141 @@
+.navbar {
+    position: fixed;
+    top: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 80px;
+    z-index: 2;
+    width: 100%;
+    box-sizing: border-box;
+    background-color: #ffffff;
+    padding-left: 5%;
+    padding-right: 5%;
+}
+
+.logoContainer {
+    display: flex;
+    align-items: center;
+    gap: 10px; 
+}
+
+.logo {
+    width: 60px; 
+    height: auto;
+}
+
+.title {
+    font-size: 30px;
+    font-weight: 600;
+    text-decoration: none;
+    color: #1B3C73;
+}
+
+.menu {
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.menuItems {
+    display: flex;
+    gap: 47px;
+    list-style: none;
+    align-items: center;
+}
+
+.menuItems div {
+    font-size: 20px;
+    font-weight: 500;
+    color: #1B3C73;
+    text-decoration: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    transition: color 0.3s, background-color 0.3s;
+}
+
+.menuItems div.reserve {
+    background-color: #921224;
+    color: #ffffff;
+}
+
+.menuItems div:hover {
+    color: #ffffff;
+    background-color: #921224;
+}
+
+.menuItems div.active {
+    color: #ffffff;
+    background-color: #921224;
+}
+
+/* Remove default Link styling */
+.menuItems div a {
+    color: inherit;          /* Inherit the text color from the parent div */
+    text-decoration: none;   /* Remove underline */
+    font-size: 20px;         /* Ensure font size is consistent */
+}
+
+.menuBtn {
+    width: 50px;
+    height: 50px;
+    display: none;
+    cursor: pointer;
+}
+
+@media screen and (max-width: 880px) {
+    .title{
+        font-size: 15px;
+    }
+    .navbar {
+        height: 80px;
+        flex-direction: row;
+    }
+
+    .menu {
+        position: relative;
+        width: 100%;
+        justify-content: flex-end;
+    }
+
+    .menuBtn {
+        display: block;
+    }
+
+    .menuItems {
+        display: none;
+        position: absolute;
+        top: 100%;
+        right: 0;
+        width: 100%;
+        flex-direction: column;
+        align-items: flex-end;
+        gap: 13px;
+        background: white;
+        padding: 24px 33px;
+        box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.25);
+        z-index: 3;
+        border-radius: 10px;
+    }
+
+    .menuOpen {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .menuItems div {
+        font-size: 18px;
+        padding: 12px 15px;
+    }
+}
+
+@media screen and (min-width: 881px) {
+    .menuBtn {
+        display: none;
+    }
+
+    .menuItems {
+        display: flex;
+    }
+}

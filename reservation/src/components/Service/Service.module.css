@@ -1,0 +1,136 @@
+.services {
+  padding: 4rem 2rem;
+  background-color: #ffffff; /* White background */
+  text-align: center;
+}
+
+.services-title {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 5%;
+  color: #1B3C73; /* Dark blue */
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* Two equal columns */
+  gap: 2rem; /* Spacing between cards */
+}
+
+.service-card {
+  display: flex;
+  flex-direction: column; /* Default to column layout */
+  justify-content: flex-start;
+  background: linear-gradient(to right, #1f3c6d, #2758ac);
+  border-radius: 10px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+  padding: 1.5rem;
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  text-align: left;
+  position: relative;
+  overflow: hidden;
+  height: 300px; /* Fixed height for consistency */
+}
+
+.service-content {
+  width: 100%; /* Initially takes up the full width of the card */
+  padding-right: 1rem; /* Some padding to the right */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  transition: transform 0.3s ease-in-out;
+  z-index: 1; /* Ensure text stays on top */
+}
+
+.service-icon {
+  font-size: 3rem;
+  color: #fbfbfb; /* White color */
+  margin-bottom: 1rem;
+}
+
+.service-title {
+  font-size: 26px;
+  font-weight: bold;
+  color: #f4f4f4;
+  margin-bottom: 15px;
+}
+
+.service-description {
+  font-size: 18px;
+  line-height: 1.6;
+  color: #f4f4f4;
+  margin-bottom: 15px;
+  transition: transform 0.6s ease-in-out; /* Smooth transition for text */
+}
+
+.service-image {
+  position: absolute;
+  top: 0;
+  right: -100%; /* Initially, the image is off-screen */
+  width: 100%; /* Image takes up half of the card */
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  transition: right 0.4s ease-in-out; /* Smooth transition for image */
+  z-index: 0; /* Ensure image stays behind text */
+}
+
+.service-card:hover .service-content {
+  width: 50%; /* Text takes up half of the card on hover */
+  transform: translateX(0); /* Keep text within the card */
+}
+
+.service-card:hover .service-image {
+  right: 0; /* Slide the image in */
+}
+
+
+.service-card:hover .service-description {
+  opacity: 0; /* Hide description on hover */
+}
+
+.service-card:hover .service-title {
+  font-size: 50px;
+  color: #ffffff;
+}
+
+.service-card:hover .service-icon {
+    color: #ffffff;
+}
+
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+  .services {
+    padding: 2rem 1rem;
+  }
+
+  .services-grid {
+    grid-template-columns: 1fr; /* Switch to single column on smaller screens */
+  }
+
+  .service-card {
+    flex-direction: column; /* Stack text and image vertically on mobile */
+    height: auto; /* Remove fixed height */
+  }
+
+  .service-content {
+    width: 100%; /* Text takes full width on mobile */
+    padding-right: 0;
+  }
+
+  .service-image {
+    width: 100%; /* Image takes full width on mobile */
+    right: -100%; /* Hide image off-screen initially */
+  }
+
+  .service-card:hover .service-image {
+    right: 0; /* Image slides in from the right */
+  }
+
+  .service-card:hover .service-content {
+    transform: translateX(0); /* No slide effect on mobile */
+  }
+}
